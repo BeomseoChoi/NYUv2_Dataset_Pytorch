@@ -1,0 +1,20 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-dockerfile
+{
+	"name": "nyuv2",
+	"dockerComposeFile": ["../docker/docker-compose.nyuv2.yml"],
+	"workspaceFolder": "/root/project",
+	"service": "service.nyuv2",
+	
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"python.terminal.activateEnvInCurrentTerminal": true,
+				"python.defaultInterpreterPath": "/root/Env/bin/python"
+			},
+			"extensions": [
+				"ms-python.python"
+			]
+		}
+	}
+}

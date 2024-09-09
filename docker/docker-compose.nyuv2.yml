@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  service.nyuv2:
+    container_name: nyuv2
+    build:
+      context: ../ # Project Directory. The current path in a Dockerfile will be set to the context, NOT the directory where Dockerfile is.
+      dockerfile: docker/nyuv2/Dockerfile.nyuv2 # Relative to the context
+    working_dir: /root/project
+    volumes:
+      - ../:/root/project
+      
+      # for x11 in docker
+      - ~/.Xauthority:/root/.Xauthority:rw
+    network_mode: "host"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]
+    runtime: nvidia
+
+    tty: true

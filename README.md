@@ -21,5 +21,5 @@ dataset = NYUv2Dataset(
 
 This requires `torch`, `torchvision`, `einops`, `numpy`, `h5py`, `opencv-python`,  `pathlib`.
 
-## working python version
+## Working python version
 - `python310`
